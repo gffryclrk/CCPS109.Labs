@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Rectangle
+comment0.text=\n\ Write\ a\ description\ of\ class\ Rectangle\ here.\n\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=w\ h
+comment1.target=Rectangle(int,\ int)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Rectangle\n
+comment2.params=
+comment2.target=int\ getHeight()
+comment2.text=\n\ \ \ \ public\ int\ sampleMethod(int\ y)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ //\ put\ your\ code\ here\n\ \ \ \ \ \ \ \ //return\ x\ +\ y;\n}
+comment3.params=
+comment3.target=int\ getWidth()
+comment4.params=
+comment4.target=int\ getArea()
+comment5.params=
+comment5.target=int\ getPerimeter()
+comment6.params=
+comment6.target=void\ flip()
+numComments=7
