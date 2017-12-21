@@ -8,5 +8,5 @@ PROJECT TITLE: CCPS109 Weekly Labs
 PURPOSE OF PROJECT: Catching up on some Java
 VERSION or DATE: 0.1
 HOW TO START THIS PROJECT: Created with BlueJ. Tests provided
-AUTHORS: Geoffrey Clark (code), Ilkka Kokkarinen (tests)
+AUTHORS: Geoffrey Clark (solutions), Ilkka Kokkarinen (tests)
 USER INSTRUCTIONS: First time through these; learning by trying to pass all tests.
