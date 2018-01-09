@@ -57,9 +57,12 @@ public class MoreStringProblems
                 finalInt *= -1;
                 break;
             }
-            for(int i=0; i<s.charAt(s.length()-1-j)-48; i+=1){
-                finalInt += 1*(Math.pow(10,j));
-            }
+            // My Original Implementation
+            // for(int i=0; i<s.charAt(s.length()-1-j)-48; i+=1){
+            //     finalInt += 1*(Math.pow(10,j));
+            // }
+            // Improved? Less looping. 
+            finalInt += (s.charAt(s.length()-1-j)-48)*(Math.pow(10,j));
         }
         return finalInt;
     }
