@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RecursionProblems
+comment1.params=arr\ start\ end
+comment1.target=boolean\ allEqual(int[],\ int,\ int)
+comment2.params=src\ start\ tgt\ start2\ len
+comment2.target=void\ arraycopy(double[],\ int,\ double[],\ int,\ int)
+numComments=3
