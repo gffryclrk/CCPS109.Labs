@@ -10,8 +10,9 @@ public class RecursionProblems
 {
     public boolean allEqual(int[] arr, int start, int end){
         if(arr.length <= 1) return true;
-        if(start == end) return true;
-        if(arr[start] == arr[end] && allEqual(arr, start+1, end)) return true;
+        else if(start >= end) return true;
+        else if(arr.length == 2 && arr[start] == arr[end]) return true;
+        else if(arr[start] == arr[end] && allEqual(arr, start+1, end)) return true;
         else return false;
     }
     public void arraycopy(double[] src, int start, double[] tgt, int start2, int len){
@@ -47,4 +48,56 @@ public class RecursionProblems
             }
         }
     }
+    int countRuns(int[] arr, int start, int end){
+        if(arr.length == 0 | end < start) return 0;
+        int count = 0;
+        // if(start < end && start < arr.length - 3){
+        if(end < arr.length && start < end - 1){
+            if(arr[start] != arr[start+1]){
+                // return countRuns(arr, start+1, end) + 1;
+                count += countRuns(arr, start+1, end);
+            }else{
+                count += countRuns(arr, start+2, end);
+            }
+        // }else if(start < end && start < arr.length - 2){
+        }else if(end < arr.length && start == end - 1){
+            if(arr[start] != arr[start+1]){
+                count += 1;
+            }else{
+                // Nothing...
+                count -=1;
+            }
+            //count -=1;
+        }else if(end == start && end > 0){
+            if(arr[start] == arr[start-1]) count -=1;
+            count -=1;
+        }
+        return count + 1;
+    }
+    void reverse(int[] arr, int start, int end){
+        // if(((end - start) & 1) == 0 && end > start){
+        if(end > start){
+            // Odd
+            // System.arraycopy(arr, start, arr, end, 1);
+            int tmp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = tmp;
+            reverse(arr, start+1, end-1);
+        } else {
+            // Even
+        }
+    }
+    // lol I didn't realize I had already done this method so went to do it again.
+    // My previous implementation seems better... 
+    // Upon reviewing my previous code I now realize that this actually tests for matching adjacent integers, 
+    // Not what was asked for in question. 
+    /*
+    boolean linearSearch(int [] arr, int x, int start, int end){
+        if(start < end && arr[start] == arr[start+1]) return true;
+        else if(start < end && arr[start] != arr[start+1]){
+            return linearSearch(arr, x, start+1, end);
+        }
+        else return false;
+    }
+    */
 }
