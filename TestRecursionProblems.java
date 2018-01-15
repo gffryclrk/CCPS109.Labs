@@ -145,9 +145,11 @@ public class TestRecursionProblems {
             for(int j = 0; j < len; j++) {
                 a[j] = rng.nextInt(20);
             }
+            System.out.println(Arrays.toString(a));
+            System.out.println(len);
             check.update(rp.countRuns(a, 0, len - 1));
         }
-        System.out.println(Arrays.toString(a));
+        //System.out.println(Arrays.toString(a));
         assertEquals(225598946L, check.getValue());
     }
 }

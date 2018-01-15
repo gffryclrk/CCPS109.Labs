@@ -49,7 +49,7 @@ public class RecursionProblems
         }
     }
     int countRuns(int[] arr, int start, int end){
-        if(arr.length == 0 | end < start) return 0;
+        if(arr.length == 0 | end < start | start < 0) return 0;
         int count = 0;
         // if(start < end && start < arr.length - 3){
         if(end < arr.length && start < end - 1){
