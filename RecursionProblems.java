@@ -28,9 +28,11 @@ public class RecursionProblems
         else return linearSearch(arr, x, start+1, end);
     }
     public void parityPartition(int[] arr, int start, int end){
-        if(arr.length > 1 && start <= end){
+        //System.out.println(Arrays.toString(arr));
+        //System.out.println(start + " " + end);
+        if(arr.length > 1 && start < end){
             int[] arrOut = new int[arr.length]; // This is a new array to hold my mixed up copies...
-            if((arr[start] & 1)==0){                
+            if((arr[start] % 2)==0){                
                 // First copy element to the end
                 // However there's a trick: If start > 0 I need to do to copies: Before & after the position. 
                 // I'm finding myself genuinely surprised that there isn't an easier way to do this (perhaps there is)
@@ -46,9 +48,11 @@ public class RecursionProblems
             }else{
                 parityPartition(arr, start+1, end);
             }
+            
         }
+        // System.out.println(Arrays.toString(arr));
     }
-    int countRuns(int[] arr, int start, int end){
+    int countRuns_one(int[] arr, int start, int end){
         if(arr.length == 0 | end < start | start < 0) return 0;
         int count = 0;
         // if(start < end && start < arr.length - 3){
@@ -73,6 +77,12 @@ public class RecursionProblems
             count -=1;
         }
         return count + 1;
+    }
+    int countRuns(int [] arr, int start, int end){
+        if(start > end || arr.length == 0) return 0;
+        else if(start == end) return 1;
+        else if(arr[start] == arr[start + 1]) return countRuns(arr, start+1, end);
+        else return 1 + countRuns(arr, start+1, end);
     }
     void reverse(int[] arr, int start, int end){
         // if(((end - start) & 1) == 0 && end > start){
