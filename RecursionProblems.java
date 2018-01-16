@@ -36,21 +36,24 @@ public class RecursionProblems
                 // First copy element to the end
                 // However there's a trick: If start > 0 I need to do to copies: Before & after the position. 
                 // I'm finding myself genuinely surprised that there isn't an easier way to do this (perhaps there is)
-                System.arraycopy(arr, start, arrOut, arr.length-1,1);
+                System.arraycopy(arr, start, arrOut, end,1);
                 // Next, copy rest of array:
                 // First: before start
                 System.arraycopy(arr, 0, arrOut, 0, start);
                 // Second: After start
-                System.arraycopy(arr, start+1, arrOut, start, arr.length-1-start);
+                System.arraycopy(arr, start+1, arrOut, start, end-start);
+                // Copy everything after end (so that original state of array is preserved..)
+                if(arr.length > end) System.arraycopy(arr, end+1, arrOut, end+1, arr.length-1-end);
                 // Now copy everything back to the original array and pass it to itself. 
                 System.arraycopy(arrOut, 0, arr, 0, arr.length);
+                
                 parityPartition(arr, start, end-1);
             }else{
                 parityPartition(arr, start+1, end);
             }
             
         }
-        // System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
     }
     int countRuns_one(int[] arr, int start, int end){
         if(arr.length == 0 | end < start | start < 0) return 0;
