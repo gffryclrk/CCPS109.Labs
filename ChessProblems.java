@@ -2,8 +2,8 @@
 /**
  * Write a description of class ChessProblems here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Geoffrey Clark
+ * @version 0.1
  */
 public class ChessProblems
 {
@@ -66,7 +66,27 @@ public class ChessProblems
         return (n * n) - ((count[1] * (n - count[0])) + (n * count[0]));
     }
     public int countSafeSquaresQueens(int n, boolean[][] queens){
-        return 0;
+        boolean[][] danger = new boolean[queens.length][queens[0].length];
+        int count = 0;
+        for(int i=0; i<(n*n); i+=1){
+            // System.out.println("0 Index:" + (Math.floor(i/n)));
+            // System.out.println("1 Index:" + (i % n));
+            if(queens[(i/n)][(i % n)]){
+                
+                for(int j=0; j<(n*n); j+=1){
+                    // int dx = Math.floor(j/n);
+                    // int dy = (j % n);
+                    if(!danger[(j/n)][(j%n)] && Math.abs((j/n)-(i/n)) == Math.abs((j%n)-(i%n)) || !danger[(j/n)][(j%n)] && (j/n)==(i/n) || !danger[(j/n)][(j%n)] && (j%n)==(i%n)){
+                        danger[(j/n)][(j%n)] = true;
+                        count += 1;
+                    }
+                }
+
+            }
+
+
+        }
+        return (n*n) - count;
     }
     public int countKnightMoves(int n, boolean[][] knights){
         return 0;
