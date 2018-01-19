@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ChessProblems
-comment0.text=\n\ Write\ a\ description\ of\ class\ ChessProblems\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ChessProblems\ here.\n\n\ @author\ Geoffrey\ Clark\n\ @version\ 0.1\n
 comment1.params=i\ j\ n
 comment1.target=boolean\ inside(int,\ int,\ int)
 comment2.params=n\ rooks
@@ -10,7 +10,9 @@ comment3.target=int\ countSafeSquaresRooks(int,\ boolean[][])
 comment4.params=n\ queens
 comment4.target=int\ countSafeSquaresQueens(int,\ boolean[][])
 comment5.params=n\ knights
-comment5.target=int\ countKnightMoves(int,\ boolean[][])
-comment6.params=n\ board
-comment6.target=int\ countPawnMoves(int,\ char[][])
-numComments=7
+comment5.target=int\ countKnightMoves1(int,\ boolean[][])
+comment6.params=n\ knights
+comment6.target=int\ countKnightMoves(int,\ boolean[][])
+comment7.params=n\ board
+comment7.target=int\ countPawnMoves(int,\ char[][])
+numComments=8
